@@ -1,26 +1,32 @@
-# retinalfundus_imgstitching
-# 🧠 Image Stitching with OpenCV & PyTorch
+# Retinal Fundus Image Stitching
 
-This project presents two advanced pipelines for image stitching:
+A computer vision project that combines overlapping images into a wider panorama. It explores both natural-image stitching and retinal fundus image stitching.
 
-1. 🖼️ **MS COCO / natural scene image stitching** using OpenCV's built-in stitching API.
-2. 👁️ **Retinal fundus image stitching** using SIFT/ORB feature-based homography, PyTorch-based warping/blending, and accuracy/loss monitoring.
+## Features
 
----
+- Enhances image contrast using CLAHE.
+- Detects and matches image features using SIFT/ORB-based approaches.
+- Estimates image alignment with homography and RANSAC.
+- Produces stitched panorama outputs for visual inspection.
 
-## 📌 Features
+## Tech Stack
 
-### ✅ COCO/Natural Image Stitching
-- Uses OpenCV’s `cv2.Stitcher_create()` for quick panorama creation.
-- Applies histogram equalization (CLAHE) to enhance brightness and contrast.
-- Handles image batch extraction from a ZIP file.
+Python · OpenCV · NumPy · Matplotlib · PyTorch · Jupyter Notebook
 
-### ✅ Retinal Image Stitching
-- Uses SIFT or ORB to detect keypoints and compute descriptors.
-- Estimates homography using RANSAC.
-- Blends warped image pairs using PyTorch.
-- Tracks feature matching accuracy and pixel-level losses across training epochs.
-- Saves stitched outputs and matching visualizations.
+## Getting Started
 
----
+```bash
+git clone https://github.com/bmanasareddy05/retinalfundus_imgstitching.git
+cd retinalfundus_imgstitching
+pip install -r Requirements
+```
 
+Open `imgstitching.ipynb` in Jupyter Notebook and run the cells. Update the input image or dataset paths to match your local setup.
+
+## Outputs
+
+The repository includes example stitched images such as `panorama_enhanced.png` and `retinalimg_stitched.png`.
+
+## Notes
+
+Results depend on image overlap, illumination, and feature quality. This is an image-processing project for experimentation and is **not a medical diagnostic tool**.
